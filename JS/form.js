@@ -1,110 +1,30 @@
-window.addEventListener('DOMContentLoaded', (event) => {
-    const name = document.querySelector('#name');
-    const textError = document.querySelector('.text-error');
-    name.addEventListener('input', function() {
-        if (name.value.length == 0) {
-            textError.textContent = "";
-            return;
-        }
-        try {
-            (new EmployeePayroll()).name = name.value;;
-            textError.textContent = "";
-        } catch (e) {
-            textError.textContent = e;
-        }
-    });
-
-    const salary = document.querySelector('#salary');
-    const output = document.querySelector('.salary-output');
+const salary = document.querySelector('#salary');
+const output = document.querySelector('.salary-output');
+output.textContent = salary.value;
+salary.addEventListener('input', function() {
     output.textContent = salary.value;
-    salary.addEventListener('input', function() {
-        output.textContent = salary.value;
-    });
 });
 
-const saveForm = () => {
-    try {
-        let employeePayroll = createEmployeePayroll();
-        createAndUpdateStorage(employeePayroll);
-    } catch (e) {
-        return
-    }
-}
+const text = document.querySelector('#name');
+const textError = document.querySelector('.text-error');
+text.addEventListener('input', function() {
+    const regName = /^[A-Z][a-z]{2,}$/;
+    if (regName.test(text.value))
+        textError.textContent = "";
+    else textError.textContent = "Invalid first name ";
+});
 
-const createEmployeePayroll = () => {
-    let employeePayroll = new EmployeePayroll();
-    try {
-        employeePayroll.name = getInputValueById('#name');
-    } catch (e) {
-        setTextValue('.text-error', e);
-        throw e;
-    }
-    employeePayroll.picture = getSelectedValues('[name=profile]').pop();
-    employeePayroll.gender = getSelectedValues('[name=gender]').pop();
-    employeePayroll.department = getSelectedValues('[name=department]');
-    employeePayroll.salary = getInputValueById('#salary');
-    employeePayroll.notes = getInputValueById('#notes');
-    let date = getInputValueById('#day') + " " + getInputValueById('#month') + " " + getInputValueById('#year');
-    employeePayroll.date = Date.parse(date);
-    alert(employeePayroll.toString());
-    return employeePayroll;
-}
+document.getElementById("submit").onclick = function() {
+    let employee = new EmployeePayroll();
+    employee.name = document.getElementById("name").value;
+    employee.picture = document.querySelector('input[name = profile]:checked').value;
+    employee.gender = document.querySelector('input[name = gender]:checked').value;
+    employee.department = document.querySelector('input[name = department]:checked').value;
+    employee.salary = document.getElementById("salary").value;
+    employee.notes = document.getElementById("notes").value;
+    employee.startDate = new Date(parseInt(document.getElementById("year").value), parseInt(document.getElementById("month").value), parseInt(document.getElementById("day").value));
+};
 
-const getSelectedValues = (propertyValue) => {
-    let allItems = document.querySelectorAll(propertyValue);
-    let setItems = [];
-    allItems.forEach(item => {
-        if (item.checked) setItems.push(item.value);
-    });
-    return setItems;
-}
-
-const getInputValueById = (id) => {
-    let value = document.querySelector(id).value;
-    return value;
-}
-
-const getInputElementValue = (id) => {
-    let value = document.getElementById(id).value;
-    return value;
-}
-
-function createAndUpdateStorage(employeePayroll) {
-    let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
-    if (employeePayrollList != undefined) {
-        employeePayrollList.push(employeePayroll);
-    } else {
-        employeePayrollList = [employeePayroll];
-    }
-    alert(employeePayrollList.toString());
-    localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
-}
-
-const resetForm = () => {
-    setValue('#name', '');
-    unsetSelectedValues('[name=profile]');
-    unsetSelectedValues('[name=gender]');
-    unsetSelectedValues('[name=department]');
-    setValue('#salary', '');
-    setValue('#notes', '');
-    setValue('#day', '1');
-    setValue('#month', 'January');
-    setValue('#year', '2020');
-}
-
-const unsetSelectedValues = (propertyValue) => {
-    let allItems = document.querySelectorAll(propertyValue);
-    allItems.forEach(item => {
-        item.checked = false;
-    });
-}
-
-const setTextValue = (id, value) => {
-    const element = document.querySelector(id);
-    element.textContent = value;
-}
-
-const setValue = (id, value) => {
-    const element = document.getElementById(id);
-    element.value = value;
+document.getElementById("reset").onclick = function() {
+    document.getElementById("empForm").reset();
 }
