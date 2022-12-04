@@ -58,7 +58,6 @@ error-output {
     align-items: center;
     border: 0px solid #82a70c;
     min-height: calc(100%-80px);
-    margin: 0 15px;
 }
 
 .form {
