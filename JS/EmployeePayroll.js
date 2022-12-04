@@ -1,28 +1,28 @@
 class EmployeePayroll {
 
     get id() {
-        return this.id;
+        return this._id;
     }
     set id(id) {
-        this.id = id;
+        this._id = id;
     }
 
     get name() {
-        return this.name;
+        return this._name;
     }
     set name(name) {
         let nameRegex = /[A-Z][a-z]{2,}/;
         if (nameRegex.test(name))
-            this.name = name;
+            this._name = name;
         else
-            throw "Invalid name";
+            throw "Invalid Name";
     }
 
     get picture() {
         return this._picture;
     }
     set picture(picture) {
-        this.picture = picture;
+        this._picture = picture;
     }
 
     get gender() {
@@ -30,50 +30,46 @@ class EmployeePayroll {
     }
 
     set gender(gender) {
-        this.gender = gender;
+        this._gender = gender;
     }
 
     get department() {
-        return this.department;
+        return this._department;
     }
 
     set department(department) {
-        this.department = department;
+        this._department = department;
     }
 
     get salary() {
-        return this.salary;
+        return this._salary;
     }
 
     set salary(salary) {
-        this.salary = salary;
+        this._salary = salary;
     }
 
     get startDate() {
-        return this.startDate;
+        return this._startDate;
     }
 
     set startDate(startDate) {
-        startDate = startDate.getTime() + (30 * 24 * 60 * 60 * 1000);
-        let today = new Date().getTime() + (30 * 24 * 60 * 60 * 1000);
-        if (today >= startDate) {
-            this.startDate = startDate;
+        if (startDate <= new Date()) {
+            this._startDate = startDate + 1;
         } else {
-            ("Invalid date");
+            throw "Invalid date";
         }
     }
 
     get notes() {
-        return this.notes;
+        return this._notes;
     }
 
     set notes(notes) {
-        this.notes = notes;
+        this._notes = notes;
     }
 
     toString() {
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        const empDate = !this.startDate ? "undefined" : this.startDate.toLocaleDateString("en-US", options);
-        return "id = " + this.id + ", name = " + this.name + ", gender = " + this.gender + ", profile picture = " + this.profilePic + ", department = " + this.department + ", salary = " + this.salary + ", startDate = " + this.startDate + ", note = " + this.note;
+        return "id = " + this.id + ", name = " + this.name + ", gender = " + this.gender + ", profile picture = " + this.picture + ", department = " + this.department + ", salary = " + this.salary + ", startDate = " + this.startDate + ", note = " + this.notes;
     }
 }
