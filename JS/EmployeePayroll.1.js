@@ -59,6 +59,8 @@ class EmployeePayroll {
         this._startDate = startDate;
     }
 
+    
+    
     get notes() {
         return this._notes;
     }

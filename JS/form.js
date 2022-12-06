@@ -57,6 +57,8 @@ const getSelectedValues = (propertyValue) => {
         if (item.checked) setItems.push(item.value);
     });
     return setItems;
+
+    
 }
 
 const getInputValueById = (id) => {
