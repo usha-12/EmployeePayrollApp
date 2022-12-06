@@ -8,7 +8,6 @@ const checkName = (name) => {
     let nameRegex = RegExp(/^[A-Z][a-z]{2,}/);
     if (!nameRegex.test(name)) throw 'Name is Incorrect';
 }
-
 const checkStartDate = (startDate) => {
     if (startDate <= new Date()) {
         startDate = startDate + 1;

@@ -139,6 +139,7 @@ td {
     opacity: 1;
 }
 
+
 td:first-child {
     display: flex;
     align-items: center;
