@@ -162,14 +162,14 @@ const resetForm = () => {
     setSelectedIndex("#day", 0);
     setSelectedIndex("#month", 0);
     setSelectedIndex("#year", 0);
-
-    
 };
 
 const setTextValue = (id, value) => {
     const element = document.querySelector(id);
     element.textContent = value;
 };
+
+
 
 const checkForUpdate = () => {
     const employeePayrollJson = localStorage.getItem("editEmp");

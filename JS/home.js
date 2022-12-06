@@ -8,12 +8,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 const getEmployeeFromStorage = () => {
 
-    
+
     // document.querySelector(".emp-count").textContent = employeePayrollList.length;
     employeePayrollList = localStorage.getItem("EmployeeList") ? JSON.parse(localStorage.getItem("EmployeeList")) : [];
     processEmployeePayrollDataResponse();
 };
-
 const processEmployeePayrollDataResponse = () => {
     document.querySelector(".emp-count").textContent = employeePayrollList.length;
     createInnerHtml();
