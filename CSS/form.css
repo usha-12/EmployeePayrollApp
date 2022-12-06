@@ -46,6 +46,8 @@ body {
 }
 
 .form-content {
+
+    
     min-height: calc(100% -80px);
     background-color: #f7f7f7;
     display: flex;

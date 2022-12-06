@@ -162,6 +162,8 @@ const resetForm = () => {
     setSelectedIndex("#day", 0);
     setSelectedIndex("#month", 0);
     setSelectedIndex("#year", 0);
+
+    
 };
 
 const setTextValue = (id, value) => {

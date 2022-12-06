@@ -50,13 +50,15 @@
         const postElem = document.querySelector('#post_services');
         const postURL = "http://127.0.0.1:3000/employee";
         const emplData = {
-            "_name": "Raghav Singh",
-            "_gender": "female",
-            "_department": "HR",
-            "_salary": "30000",
-            "_startDate": "1 Jan 2020",
-            "_notes": "",
-            "_profileUrl": "../assets/profile-images/Ellipse -4.png"
+            _name: "Raghav Singh",
+            _gender: "female",
+            _department: [
+                'Sales', 'HR'
+            ],
+            _salary: "30000",
+            _startDate: "1 Jan 2020",
+            _notes: "",
+            _picture: "../assets/profile-images/Ellipse -4.png"
         };
 
         makePromiseCall("POST", postURL, true, emplData)

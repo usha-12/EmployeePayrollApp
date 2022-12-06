@@ -49,6 +49,8 @@ class EmployeePayroll {
             this._startDate = startDate + 1;
         } else {
             throw "Invalid date";
+
+            
         }
     }
 
