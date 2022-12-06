@@ -24,6 +24,13 @@ body {
     border: 0px solid green;
 }
 
+error-output {
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+    margin-left: 5px;
+}
+
 .logo-content-img {
     border: 0px solid #42515f;
 }
@@ -194,6 +201,7 @@ select {
         flex-flow: wrap;
     }
     .submit-reset {
+        
         width: 100%;
         display: flex;
         flex-grow: 1;
@@ -201,7 +209,6 @@ select {
         justify-content: space-between;
         margin-bottom: 20px;
     }
-    
     .submitButton {
         margin: 0;
     }

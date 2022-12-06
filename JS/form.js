@@ -5,6 +5,15 @@ salary.addEventListener('input', function() {
     output.textContent = salary.value;
 });
 
+const text = document.querySelector('#name');
+const textError = document.querySelector('.text-error');
+text.addEventListener('input', function() {
+    const regName = /^[A-Z][a-z]{2,}$/;
+    if (regName.test(text.value))
+        textError.textContent = "";
+    else textError.textContent = "Invalid first name ";
+});
+
 document.getElementById("submit").onclick = function() {
     let employee = new EmployeePayroll();
     employee.name = document.getElementById("name").value;
