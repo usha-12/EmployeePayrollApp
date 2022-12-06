@@ -1,10 +1,10 @@
 class EmployeePayroll {
 
     get id() {
-        return this._id;
+        return this.id;
     }
     set id(id) {
-        this._id = id;
+        this.id = id;
     }
 
     get name() {
@@ -54,7 +54,7 @@ class EmployeePayroll {
     }
 
     set startDate(startDate) {
-        this._startDate = startDate;
+        this._startDate = startDate
     }
 
     get notes() {
@@ -68,11 +68,7 @@ class EmployeePayroll {
     toString() {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const empDate = !this.startDate ? "undefined" : this.startDate.toLocaleDateString("en-US", options);
-        return "id = " + this.id + ", name = " + this.name + ", gender = " + this.gender + ", profile picture = " + this.picture + ", department = " + this.department + ", salary = " + this.salary + ", startDate = " + empDate + ", note = " + this.notes;
-    
-    
-    
+        return "id = " + this.id + ", name = " + this.name + ", gender = " + this.gender + ", profile picture = " + this.profilePic + ", department = " + this.department + ", salary = " + this.salary + ", startDate = " + this.startDate + ", note = " + this.note;
     }
 }
-
 
