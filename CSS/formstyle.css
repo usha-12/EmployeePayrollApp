@@ -192,8 +192,6 @@ select {
     }
     .profile-radio-content {
         flex-flow: wrap;
-
-        
     }
     .submit-reset {
         width: 100%;
@@ -203,6 +201,7 @@ select {
         justify-content: space-between;
         margin-bottom: 20px;
     }
+    
     .submitButton {
         margin: 0;
     }
