@@ -142,6 +142,7 @@ td {
 td:first-child {
     display: flex;
     align-items: center;
+    
 }
 
 td img:first-child {
