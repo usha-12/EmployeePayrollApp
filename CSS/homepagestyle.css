@@ -142,7 +142,6 @@ td {
 td:first-child {
     display: flex;
     align-items: center;
-    
 }
 
 td img:first-child {
@@ -151,6 +150,7 @@ td img:first-child {
 
 td img {
     cursor: pointer;
+    
 }
 
 .dept-label {
