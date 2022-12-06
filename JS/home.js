@@ -35,6 +35,7 @@ const createInnerHtml = () => {
    `;
     }
     document.querySelector("#display").innerHTML = innerHtml;
+
     
 };
 
