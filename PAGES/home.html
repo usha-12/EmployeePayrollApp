@@ -4,10 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/homepagestyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="../js/EmployeePayroll.js"></script>
+    <script src="../js/form.js"></script>
+    <title>Employee Payroll App</title>
 </head>
 
 <body>
-    <h1 style="text-align: center;">HOMEPAGE</h1>
+    <header class="header-content header">
+        <div class="logo-content">
+            <img src="../assets/images/logo.png" alt="Logo">
+            <div>
+                <span class="emp-text">Employee</span><br>
+                <span class="emp-text emp-payroll">PayRoll</span>
+            </div>
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="header-content">
+            <div class="emp-detail-text">
+                Employee Details
+                <div class="emp-count">10</div>
+            </div>
+            <a href="../pages/EmployeePayrollApp.html" class="add-button"><img src="../assets/icons/add-24px.svg" alt="">Add User</a>
+        </div>
+        <div class="table-main">
+            <table id="display" class="table">
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>Start Date</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td><img class="profile" alt="" src="../assets/profile-images/Ellipse -7.png"></td>
+                    <td>Pallavi Srivastava</td>
+                    <td>Female</td>
+                    <td>
+                        <div class="dept-label">Finance</div>
+                        <div class="dept-label">Engineer</div>
+                    </td>
+                    <td>750000</td>
+                    <td>29 july 2019</td>
+                    <td>
+                        <img id="1" onclick="remove(this)" alt="delete" src="../assets/icons/delete-black-18dp.svg">
+                        <img id="1" onclick="update(this)" alt="edit" src="../assets/icons/create-black-18dp.svg">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </body>
+
 </html>
