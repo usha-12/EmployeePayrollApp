@@ -90,8 +90,11 @@ const resetForm = () => {
     setValue('#day', '1');
     setValue('#month', 'January');
     setValue('#year', '2020');
-}
 
+
+
+    
+}
 
 const unsetSelectedValues = (propertyValue) => {
     let allItems = document.querySelectorAll(propertyValue);
