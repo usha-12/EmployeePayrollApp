@@ -18,8 +18,8 @@
             </div>
         </div>
     </header>
-    <div class="form-content">
-        <form class="form" action="#" onsubmit="save();return false">
+    <div id="formId" class="form-content">
+        <form id="empForm" class="form" action="#" onreset="resetForm()" onsubmit="saveForm()">
             <div class="form-head">Employee Payroll Form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
@@ -59,15 +59,15 @@
             <div class="row-content">
                 <label class="label text" for="department">Department</label>
                 <div>
-                    <input class="checkbox" type="checkbox" name="hr" id="hr" value="hr">
+                    <input class="checkbox" type="checkbox" name="department" id="hr" value="hr">
                     <label class=" text" for="hr">Hr</label>
-                    <input class="checkbox" type="checkbox" name="sales" id="sales" value="sales">
+                    <input class="checkbox" type="checkbox" name="department" id="sales" value="sales">
                     <label class=" text" for="sales">Sales</label>
-                    <input class="checkbox" type="checkbox" name="finance" id="finance" value="finance">
+                    <input class="checkbox" type="checkbox" name="department" id="finance" value="finance">
                     <label class=" text" for="finance">Finance</label>
-                    <input class="checkbox" type="checkbox" name="engineer" id="engineer" value="engineer">
+                    <input class="checkbox" type="checkbox" name="department" id="engineer" value="engineer">
                     <label class=" text" for="engineer">Engineer</label>
-                    <input class="checkbox" type="checkbox" name="other" id="other" value="other">
+                    <input class="checkbox" type="checkbox" name="department" id="other" value="other">
                     <label class=" text" for="other">Other</label>
                 </div>
             </div>
@@ -134,6 +134,9 @@
                     <option value="2016">2016</option>
                 </select>
                 </div>
+                <error-output class="date-output" for="startdate"></error-output>
+
+                
             </div>
             <div class="row-content">
                 <label class="label text" for="notes">Notes</label>
@@ -149,8 +152,8 @@
     </div>
     </form>
     </div>
+    <script src="../js/form.js"></script>
+    <script src="../js/EmployeePayroll.js"></script>
 </body>
-<script src="../js/form.js"></script>
-<script src="../js/EmployeePayroll.js"></script>
 
 </html>
