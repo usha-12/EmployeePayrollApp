@@ -49,7 +49,6 @@ class EmployeePayroll {
 
     set salary(salary) {
         this._salary = salary;
-        
     }
 
     get startDate() {
