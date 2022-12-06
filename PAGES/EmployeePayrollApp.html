@@ -3,7 +3,7 @@
 <head>
     <title>Employee Payroll Form</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
     <link rel="stylesheet" href="../css/formstyle.css">
     <link rel="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -73,7 +73,7 @@
             <div class="row-content">
                 <label class="label text" for="salary">Salary</label>
                 <input class="input" type="range" name="salary" id="salary" max="800000" min="600000" step="100" value=700000>
-                <output class="Salary-output text" for="salary">700000</output>
+                <output class="salary-output text" for="salary">700000</output>
             </div>
             <div class="row-content">
                 <label class="label text" for="startdate">Start Date</label>
@@ -145,9 +145,11 @@
                     <button class="resetButton button" type="reset" id="reset">Reset</button>
                 </div>
             </div>
+            
     </div>
     </form>
     </div>
 </body>
+<script src="../js/form.js"></script>
 
 </html>

@@ -192,6 +192,8 @@ select {
     }
     .profile-radio-content {
         flex-flow: wrap;
+
+        
     }
     .submit-reset {
         width: 100%;
