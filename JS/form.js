@@ -20,6 +20,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
     salary.addEventListener('input', function() {
         output.textContent = salary.value;
     });
+
+    const startDate = document.querySelector('#date');
+    startDate.addEventListener("input", function() {
+        const day = document.getElementById("day").value;
+        const month = document.getElementById("month").value;
+        const year = document.getElementById("year").value;
+        const dateError = document.querySelector(".date-error");
+        try {
+            (new EmployeePayroll()).startDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+            dateError.textContent = "";
+        } catch (e) {
+            dateError.textContent = e;
+        }
+    });
 });
 
 const saveForm = () => {
@@ -44,8 +58,7 @@ const createEmployeePayroll = () => {
     employeePayroll.department = getSelectedValues('[name=department]');
     employeePayroll.salary = getInputValueById('#salary');
     employeePayroll.notes = getInputValueById('#notes');
-    let date = getInputValueById('#day') + " " + getInputValueById('#month') + " " + getInputValueById('#year');
-    employeePayroll.date = Date.parse(date);
+    employeePayroll.startDate = new Date(parseInt(document.getElementById("year").value), parseInt(document.getElementById("month").value) - 1, parseInt(document.getElementById("day").value));
     alert(employeePayroll.toString());
     return employeePayroll;
 }
@@ -90,8 +103,6 @@ const resetForm = () => {
     setValue('#day', '1');
     setValue('#month', 'January');
     setValue('#year', '2020');
-
-
 
     
 }
