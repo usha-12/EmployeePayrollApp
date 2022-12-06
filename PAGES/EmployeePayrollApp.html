@@ -14,12 +14,12 @@
             <img src="../assets/images/logo.png" alt="Logo">
             <div>
                 <span class="emp-text">Employee</span><br>
-                <span class="emp-text emp-payroll">Payroll</span>
+                <span class="emp-text emp-payroll">PayRoll</span>
             </div>
         </div>
     </header>
     <div id="formId" class="form-content">
-        <form id="empForm" class="form" action="#" onreset="resetForm()" onsubmit="save()">
+        <form id="empForm" class="form" action="#" onreset="resetForm()" onsubmit="saveForm()">
             <div class="form-head">Employee Payroll Form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
@@ -50,24 +50,24 @@
             <div class="row-content">
                 <label class="label text" for="gender">Gender</label>
                 <div>
-                    <input type="radio" name="gender" id="male" value="male">
+                    <input type="radio" name="gender" id="male" value="male" required>
                     <label class="text" for="female">Male</label>
-                    <input type="radio" name="gender" id="female" value="female">
+                    <input type="radio" name="gender" id="female" value="female" required>
                     <label class="text" for="female">Female</label>
                 </div>
             </div>
             <div class="row-content">
                 <label class="label text" for="department">Department</label>
                 <div>
-                    <input class="checkbox" type="checkbox" name="hr" id="hr" value="hr">
+                    <input class="checkbox" type="checkbox" name="department" id="hr" value="hr">
                     <label class=" text" for="hr">Hr</label>
-                    <input class="checkbox" type="checkbox" name="sales" id="sales" value="sales">
+                    <input class="checkbox" type="checkbox" name="department" id="sales" value="sales">
                     <label class=" text" for="sales">Sales</label>
-                    <input class="checkbox" type="checkbox" name="finance" id="finance" value="finance">
+                    <input class="checkbox" type="checkbox" name="department" id="finance" value="finance">
                     <label class=" text" for="finance">Finance</label>
-                    <input class="checkbox" type="checkbox" name="engineer" id="engineer" value="engineer">
+                    <input class="checkbox" type="checkbox" name="department" id="engineer" value="engineer">
                     <label class=" text" for="engineer">Engineer</label>
-                    <input class="checkbox" type="checkbox" name="other" id="other" value="other">
+                    <input class="checkbox" type="checkbox" name="department" id="other" value="other">
                     <label class=" text" for="other">Other</label>
                 </div>
             </div>
@@ -78,17 +78,17 @@
             </div>
             <div class="row-content">
                 <label class="label text" for="startdate">Start Date</label>
-                <div>
+                <div id="date">
                     <select id="day" name="day">
-                       <option value="1">1</option>
-                       <option value="2">2</option>
-                       <option value="3">3</option>
-                       <option value="4">4</option>
-                       <option value="5">5</option>
-                       <option value="6">6</option>
-                       <option value="7">7</option>
-                       <option value="8">8</option>
-                       <option value="9">9</option>
+                       <option value="01">1</option>
+                       <option value="02">2</option>
+                       <option value="03">3</option>
+                       <option value="04">4</option>
+                       <option value="05">5</option>
+                       <option value="06">6</option>
+                       <option value="07">7</option>
+                       <option value="08">8</option>
+                       <option value="09">9</option>
                        <option value="10">10</option>
                        <option value="11">11</option>
                        <option value="12">12</option>
@@ -113,18 +113,18 @@
                        <option value="31">31</option>
                    </select>
                     <select id="month" name="month">
-                    <option value="jan">January</option>
-                    <option value="feb">Febuary</option>
-                    <option value="mar">March</option>
-                    <option value="apr">April</option>
-                    <option value="may">May</option>
-                    <option value="june">June</option>
-                    <option value="july">July</option>
-                    <option value="aug">August</option>
-                    <option value="sep">September</option>
-                    <option value="oct">October</option>
-                    <option value="nov">November</option>
-                    <option value="dec">December</option>
+                    <option value="1">January</option>
+                    <option value="2">Febuary</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
                 </select>
                     <select id="year" name="year">
                     <option value="2020">2020</option>
@@ -134,6 +134,7 @@
                     <option value="2016">2016</option>
                 </select>
                 </div>
+                <error-output class="date-error" for="startdate"></error-output>
             </div>
             <div class="row-content">
                 <label class="label text" for="notes">Notes</label>
@@ -149,8 +150,8 @@
     </div>
     </form>
     </div>
+    <script src="../js/form.js"></script>
+    <script src="../js/EmployeePayroll.js"></script>
 </body>
-<script src="../js/form.js"></script>
-<script src="../js/EmployeePayroll.js"></script>
 
 </html>
