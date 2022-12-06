@@ -13,6 +13,8 @@ const getEmployeeFromStorage = () => {
     employeePayrollList = localStorage.getItem("EmployeeList") ? JSON.parse(localStorage.getItem("EmployeeList")) : [];
     processEmployeePayrollDataResponse();
 };
+
+
 const processEmployeePayrollDataResponse = () => {
     document.querySelector(".emp-count").textContent = employeePayrollList.length;
     createInnerHtml();

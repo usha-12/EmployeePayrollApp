@@ -11,7 +11,9 @@ const checkStartDate = (startDate) => {
     if (startDate <= new Date()) {
         startDate = startDate + 1;
     } else {
-        throw "Invalid date";
+
         
+        throw "Invalid date";
+
     }
 }
